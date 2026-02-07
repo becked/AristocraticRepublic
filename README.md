@@ -1,5 +1,7 @@
 # Aristocratic Republic
 
+![Aristocratic Republic](logo-512.png)
+
 An Old World mod that adds a republic government system with periodic elections every 10 turns.
 
 Power shared is power contested. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it.
