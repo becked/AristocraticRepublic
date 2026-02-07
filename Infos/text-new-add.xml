@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+	<!-- ==================== EVENT TITLES AND DESCRIPTIONS ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_TITLE</zType>
+		<en-US>Council of Oligarchs</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_3</zType>
+		<en-US>The oligarchs have gathered in solemn assembly. The great families of the realm must now choose who shall lead. Three candidates stand before the council: {CHARACTER-2} of {FAMILY-5}, {CHARACTER-3} of {FAMILY-6}, and {CHARACTER-4} of {FAMILY-7}. The fate of the republic rests upon this vote.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_2</zType>
+		<en-US>The council convenes with fewer candidates than usual. Two family heads stand ready: {CHARACTER-2} of {FAMILY-4} and {CHARACTER-3} of {FAMILY-5}. The oligarchs must decide who shall guide the republic.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_1</zType>
+		<en-US>The council convenes under unusual circumstances. Only {CHARACTER-2} of {FAMILY-3} stands as a viable challenger to the current leadership.</en-US>
+	</Entry>
+
+	<!-- ==================== EVENT OPTIONS - 3 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_REELECT</zType>
+		<en-US>Re-elect {CHARACTER-1} for another term</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_1</zType>
+		<en-US>The oligarchs support {CHARACTER-2} of {FAMILY-5}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_2</zType>
+		<en-US>The oligarchs support {CHARACTER-3} of {FAMILY-6}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_3</zType>
+		<en-US>The oligarchs support {CHARACTER-4} of {FAMILY-7}</en-US>
+	</Entry>
+
+	<!-- ==================== EVENT OPTIONS - 2 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_1_2C</zType>
+		<en-US>The oligarchs support {CHARACTER-2} of {FAMILY-4}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_2_2C</zType>
+		<en-US>The oligarchs support {CHARACTER-3} of {FAMILY-5}</en-US>
+	</Entry>
+
+	<!-- ==================== EVENT OPTIONS - 1 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_1_1C</zType>
+		<en-US>The oligarchs support {CHARACTER-2} of {FAMILY-3}</en-US>
+	</Entry>
+
+	<!-- ==================== BONUS TEXT ==================== -->
+	<Entry>
+		<zType>TEXT_BONUS_REPUBLIC_MANDATE</zType>
+		<en-US>Mandate of the Oligarchs</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_BONUS_REPUBLIC_CONTINUITY</zType>
+		<en-US>Continuity of Leadership</en-US>
+	</Entry>
+
+	<!-- ==================== MEMORY TEXT ==================== -->
+	<Entry>
+		<zType>TEXT_MEMORYFAMILY_REPUBLIC_ELEVATED</zType>
+		<en-US>Elevated Our Candidate to Leadership</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_MEMORYFAMILY_REPUBLIC_PASSED_OVER</zType>
+		<en-US>Passed Over for Leadership</en-US>
+	</Entry>
+</Root>

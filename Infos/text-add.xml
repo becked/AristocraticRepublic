@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <!-- Event Story Titles and Descriptions -->
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_TITLE</zType>
+        <English>Council of Oligarchs</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_3</zType>
+        <English>The oligarchs have gathered in solemn assembly. The great families of the realm must now choose who shall lead. Three candidates stand before the council, each representing a powerful house. The fate of the republic rests upon this vote.</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_2</zType>
+        <English>The council convenes with fewer candidates than usual. Only two family heads have come forward as viable choices for leadership. Nevertheless, the oligarchs must decide who shall guide the republic.</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_ELECTION_1</zType>
+        <English>The council convenes under unusual circumstances. With only one family established in the realm, the choice is simple: continue with the current leadership, or entrust power to the sole family head who stands as challenger.</English>
+    </Entry>
+
+    <!-- Event Option Text -->
+    <Entry>
+        <zType>TEXT_EVENTOPTION_REPUBLIC_REELECT</zType>
+        <English>Re-elect {CHARACTER-0} for another term</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_1</zType>
+        <English>The oligarchs support {CHARACTER-1} of {FAMILY-1}</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_2</zType>
+        <English>The oligarchs support {CHARACTER-2} of {FAMILY-2}</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTOPTION_REPUBLIC_CANDIDATE_3</zType>
+        <English>The oligarchs support {CHARACTER-3} of {FAMILY-3}</English>
+    </Entry>
+
+    <!-- Bonus Names -->
+    <Entry>
+        <zType>TEXT_BONUS_REPUBLIC_MANDATE</zType>
+        <English>Mandate of the Oligarchs</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_BONUS_REPUBLIC_CONTINUITY</zType>
+        <English>Continuity of Leadership</English>
+    </Entry>
+
+    <!-- Family Memory Text -->
+    <Entry>
+        <zType>TEXT_MEMORYFAMILY_REPUBLIC_ELEVATED</zType>
+        <English>Elevated Our Candidate to Leadership</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_MEMORYFAMILY_REPUBLIC_PASSED_OVER</zType>
+        <English>Passed Over for Leadership</English>
+    </Entry>
+
+    <!-- Test Event Text -->
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_TEST_TITLE</zType>
+        <English>Republic Mod Test</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTSTORY_REPUBLIC_TEST</zType>
+        <English>This is a test event to verify the Aristocratic Republic mod is loading correctly. If you see this, the mod events are working!</English>
+    </Entry>
+    <Entry>
+        <zType>TEXT_EVENTOPTION_REPUBLIC_TEST</zType>
+        <English>Acknowledge</English>
+    </Entry>
+</Root>

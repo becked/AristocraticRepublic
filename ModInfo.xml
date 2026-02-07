@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<ModInfo xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <displayName>Aristocratic Republic</displayName>
+  <description>Power shared is power contested. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it.
+
+Rules:
+- Elections occur every 10 turns starting at turn 10
+- Candidates are family heads who are adult, healthy, and not the current leader
+- Each candidate must come from a different family
+- The current leader may run for re-election, but only if all families have at least Cautious opinion
+- The winning candidate's family gains +20 opinion for 20 turns
+- All other families lose 20 opinion for 20 turns
+- New leaders receive a legitimacy bonus that scales with game progress: small in the early game, large in the late game
+- Re-elected leaders receive a smaller legitimacy bonus than new leaders
+- Leader changes use the Seize Throne mechanism, so there are no heir-bypass penalties
+</description>
+  <modpicture>logo-512.png</modpicture>
+  <author>Jeff</author>
+  <modversion>1.0.0</modversion>
+  <tags>Gameplay</tags>
+  <singlePlayer>true</singlePlayer>
+  <multiplayer>true</multiplayer>
+  <scenario>false</scenario>
+  <scenarioToggle>false</scenarioToggle>
+  <blocksMods>false</blocksMods>
+  <modDependencies />
+  <modIncompatibilities />
+  <modWhitelist />
+  <gameContentRequired>NONE</gameContentRequired>
+</ModInfo>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <Entry>
+        <zType>MEMORYFAMILY_REPUBLIC_ELEVATED</zType>
+        <Text>TEXT_MEMORYFAMILY_REPUBLIC_ELEVATED</Text>
+        <MemoryLevel>MEMORYLEVEL_POS_MEDIUM_SHORT</MemoryLevel>
+    </Entry>
+    <Entry>
+        <zType>MEMORYFAMILY_REPUBLIC_PASSED_OVER</zType>
+        <Text>TEXT_MEMORYFAMILY_REPUBLIC_PASSED_OVER</Text>
+        <MemoryLevel>MEMORYLEVEL_NEG_LOW_SHORT</MemoryLevel>
+    </Entry>
+</Root>
