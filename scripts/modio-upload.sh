@@ -5,10 +5,11 @@
 #   1. Get an OAuth2 access token from https://mod.io/me/access (read+write)
 #   2. .env file with MODIO_ACCESS_TOKEN, MODIO_GAME_ID (MODIO_MOD_ID created automatically on first run)
 #
-# Usage: ./scripts/modio-upload.sh [changelog]
+# Usage: ./scripts/modio-upload.sh [--dry-run] [changelog]
 # Examples:
 #   ./scripts/modio-upload.sh                    # Upload with version from ModInfo.xml, changelog from CHANGELOG.md
 #   ./scripts/modio-upload.sh "Fixed bug X"      # Upload with custom changelog message
+#   ./scripts/modio-upload.sh --dry-run           # Preview without uploading
 #
 # Version is always read from ModInfo.xml.
 
@@ -37,6 +38,16 @@ if [ -z "$MODIO_GAME_ID" ]; then
     echo "Error: MODIO_GAME_ID must be set in .env"
     exit 1
 fi
+
+# Parse flags
+DRY_RUN=false
+if [ "${1:-}" = "--dry-run" ]; then
+    DRY_RUN=true
+    shift
+fi
+
+# Validate mod content
+"$SCRIPT_DIR/validate.sh" || exit 1
 
 # Read version from ModInfo.xml (single source of truth)
 VERSION=$(sed -n 's/.*<modversion>\([^<]*\)<\/modversion>.*/\1/p' ModInfo.xml)
@@ -68,6 +79,19 @@ if [ -f "mod-description.html" ]; then
     DESCRIPTION=$(cat mod-description.html)
 else
     DESCRIPTION=""
+fi
+
+if [ "$DRY_RUN" = true ]; then
+    echo ""
+    echo "=== Dry run summary ==="
+    echo "Version: $VERSION"
+    echo "Changelog: ${CHANGELOG:-"(none)"}"
+    echo ""
+    echo "Files to upload:"
+    ls Infos/ ModInfo.xml logo-512.png
+    echo ""
+    echo "Dry run complete — nothing was uploaded."
+    exit 0
 fi
 
 # Step 1: Create or update mod profile

@@ -28,6 +28,10 @@ fi
 
 MOD_FOLDER="$OLDWORLD_MODS_PATH/Aristocratic Republic"
 
+# Validate mod content
+"$SCRIPT_DIR/validate.sh" || exit 1
+
+echo ""
 echo "=== Deploying to mods folder ==="
 echo "Target: $MOD_FOLDER"
 

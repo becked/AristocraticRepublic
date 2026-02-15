@@ -7,10 +7,11 @@
 #   3. .env file with STEAM_USERNAME and optionally STEAM_WORKSHOP_ID
 #   4. workshop.vdf template in project root
 #
-# Usage: ./scripts/workshop-upload.sh [changelog]
+# Usage: ./scripts/workshop-upload.sh [--dry-run] [changelog]
 # Examples:
 #   ./scripts/workshop-upload.sh                    # Upload with changelog from CHANGELOG.md
 #   ./scripts/workshop-upload.sh "Fixed bug X"      # Upload with custom changelog message
+#   ./scripts/workshop-upload.sh --dry-run           # Preview without uploading
 #
 # Version is always read from ModInfo.xml.
 
@@ -27,6 +28,16 @@ else
     echo "Error: .env file not found"
     exit 1
 fi
+
+# Parse flags
+DRY_RUN=false
+if [ "${1:-}" = "--dry-run" ]; then
+    DRY_RUN=true
+    shift
+fi
+
+# Validate mod content
+"$SCRIPT_DIR/validate.sh" || exit 1
 
 # Read version from ModInfo.xml (single source of truth)
 VERSION=$(sed -n 's/.*<modversion>\([^<]*\)<\/modversion>.*/\1/p' ModInfo.xml)
@@ -68,8 +79,18 @@ cp ModInfo.xml workshop_content/
 cp logo-512.png workshop_content/
 cp -r Infos workshop_content/
 
-echo "Content prepared:"
+echo "Content staged:"
 ls -la workshop_content/
+
+if [ "$DRY_RUN" = true ]; then
+    echo ""
+    echo "Changenote:"
+    echo "$CHANGENOTE"
+    echo ""
+    echo "Dry run complete — nothing was uploaded."
+    rm -rf workshop_content
+    exit 0
+fi
 
 # Get publishedfileid from .env (required for updates)
 PUBLISHED_ID="$STEAM_WORKSHOP_ID"
