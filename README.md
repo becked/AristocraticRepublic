@@ -37,3 +37,7 @@ Subscribe on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails
 - Single-player and multiplayer
 - No DLC required
 - XML-only — no C# code, compatible with other mods
+
+## Credits
+
+Inspired by [Siontific](https://discord.com/channels/703016545953251379/1004764350583681074/1264986743887626323) on the Old World Discord.
