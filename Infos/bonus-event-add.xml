@@ -2,7 +2,7 @@
 <Root>
 	<!-- ==================== ELECT BONUSES (applied to candidate who becomes leader) ==================== -->
 	<Entry>
-		<zType>BONUS_REPUBLIC_ELECT_T1</zType>
+		<zType>BONUS_REPUBLIC_ELECT_STABLE</zType>
 		<Name>TEXT_BONUS_REPUBLIC_MANDATE</Name>
 		<iSeizeThroneSubject>0</iSeizeThroneSubject>
 		<iLegitimacy>8</iLegitimacy>
@@ -10,62 +10,36 @@
 		<MemoryAllFamilies>MEMORYFAMILY_REPUBLIC_PASSED_OVER</MemoryAllFamilies>
 	</Entry>
 	<Entry>
-		<zType>BONUS_REPUBLIC_ELECT_T2</zType>
+		<zType>BONUS_REPUBLIC_ELECT_STRAINED</zType>
 		<Name>TEXT_BONUS_REPUBLIC_MANDATE</Name>
 		<iSeizeThroneSubject>0</iSeizeThroneSubject>
-		<iLegitimacy>15</iLegitimacy>
+		<iLegitimacy>6</iLegitimacy>
 		<Memory>MEMORYFAMILY_REPUBLIC_ELEVATED</Memory>
 		<MemoryAllFamilies>MEMORYFAMILY_REPUBLIC_PASSED_OVER</MemoryAllFamilies>
 	</Entry>
 	<Entry>
-		<zType>BONUS_REPUBLIC_ELECT_T3</zType>
+		<zType>BONUS_REPUBLIC_ELECT_FRAGILE</zType>
 		<Name>TEXT_BONUS_REPUBLIC_MANDATE</Name>
 		<iSeizeThroneSubject>0</iSeizeThroneSubject>
-		<iLegitimacy>25</iLegitimacy>
-		<Memory>MEMORYFAMILY_REPUBLIC_ELEVATED</Memory>
-		<MemoryAllFamilies>MEMORYFAMILY_REPUBLIC_PASSED_OVER</MemoryAllFamilies>
-	</Entry>
-	<Entry>
-		<zType>BONUS_REPUBLIC_ELECT_T4</zType>
-		<Name>TEXT_BONUS_REPUBLIC_MANDATE</Name>
-		<iSeizeThroneSubject>0</iSeizeThroneSubject>
-		<iLegitimacy>35</iLegitimacy>
-		<Memory>MEMORYFAMILY_REPUBLIC_ELEVATED</Memory>
-		<MemoryAllFamilies>MEMORYFAMILY_REPUBLIC_PASSED_OVER</MemoryAllFamilies>
-	</Entry>
-	<Entry>
-		<zType>BONUS_REPUBLIC_ELECT_T5</zType>
-		<Name>TEXT_BONUS_REPUBLIC_MANDATE</Name>
-		<iSeizeThroneSubject>0</iSeizeThroneSubject>
-		<iLegitimacy>45</iLegitimacy>
+		<iLegitimacy>4</iLegitimacy>
 		<Memory>MEMORYFAMILY_REPUBLIC_ELEVATED</Memory>
 		<MemoryAllFamilies>MEMORYFAMILY_REPUBLIC_PASSED_OVER</MemoryAllFamilies>
 	</Entry>
 
 	<!-- ==================== REELECT BONUSES (applied to current leader) ==================== -->
 	<Entry>
-		<zType>BONUS_REPUBLIC_REELECT_T1</zType>
+		<zType>BONUS_REPUBLIC_REELECT_STABLE</zType>
 		<Name>TEXT_BONUS_REPUBLIC_CONTINUITY</Name>
-		<iLegitimacy>5</iLegitimacy>
+		<iLegitimacy>8</iLegitimacy>
 	</Entry>
 	<Entry>
-		<zType>BONUS_REPUBLIC_REELECT_T2</zType>
+		<zType>BONUS_REPUBLIC_REELECT_STRAINED</zType>
 		<Name>TEXT_BONUS_REPUBLIC_CONTINUITY</Name>
-		<iLegitimacy>10</iLegitimacy>
+		<iLegitimacy>6</iLegitimacy>
 	</Entry>
 	<Entry>
-		<zType>BONUS_REPUBLIC_REELECT_T3</zType>
+		<zType>BONUS_REPUBLIC_REELECT_FRAGILE</zType>
 		<Name>TEXT_BONUS_REPUBLIC_CONTINUITY</Name>
-		<iLegitimacy>15</iLegitimacy>
-	</Entry>
-	<Entry>
-		<zType>BONUS_REPUBLIC_REELECT_T4</zType>
-		<Name>TEXT_BONUS_REPUBLIC_CONTINUITY</Name>
-		<iLegitimacy>20</iLegitimacy>
-	</Entry>
-	<Entry>
-		<zType>BONUS_REPUBLIC_REELECT_T5</zType>
-		<Name>TEXT_BONUS_REPUBLIC_CONTINUITY</Name>
-		<iLegitimacy>25</iLegitimacy>
+		<iLegitimacy>4</iLegitimacy>
 	</Entry>
 </Root>

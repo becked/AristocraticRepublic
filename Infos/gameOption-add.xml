@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<Root>
+	<Entry>
+		<zType>GAMEOPTION_REPUBLIC_STRAINED</zType>
+		<zName>TEXT_GAMEOPTION_REPUBLIC_STRAINED</zName>
+		<zHelp>TEXT_GAMEOPTION_REPUBLIC_STRAINED_HELP</zHelp>
+		<Category>RULES</Category>
+		<abDisableWhenActive>
+			<Pair>
+				<zIndex>GAMEOPTION_REPUBLIC_FRAGILE</zIndex>
+				<bValue>1</bValue>
+			</Pair>
+		</abDisableWhenActive>
+	</Entry>
+	<Entry>
+		<zType>GAMEOPTION_REPUBLIC_FRAGILE</zType>
+		<zName>TEXT_GAMEOPTION_REPUBLIC_FRAGILE</zName>
+		<zHelp>TEXT_GAMEOPTION_REPUBLIC_FRAGILE_HELP</zHelp>
+		<Category>RULES</Category>
+		<abDisableWhenActive>
+			<Pair>
+				<zIndex>GAMEOPTION_REPUBLIC_STRAINED</zIndex>
+				<bValue>1</bValue>
+			</Pair>
+		</abDisableWhenActive>
+	</Entry>
+</Root>

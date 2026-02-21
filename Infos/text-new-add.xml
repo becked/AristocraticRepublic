@@ -62,6 +62,24 @@
 		<en-US>Continuity of Leadership</en-US>
 	</Entry>
 
+	<!-- ==================== GAME OPTION TEXT ==================== -->
+	<Entry>
+		<zType>TEXT_GAMEOPTION_REPUBLIC_STRAINED</zType>
+		<en-US>Strained Republic</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_GAMEOPTION_REPUBLIC_STRAINED_HELP</zType>
+		<en-US>Elections require all families at Pleased or higher opinion for re-election. Legitimacy awards reduced to +6.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_GAMEOPTION_REPUBLIC_FRAGILE</zType>
+		<en-US>Fragile Republic</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_GAMEOPTION_REPUBLIC_FRAGILE_HELP</zType>
+		<en-US>Elections require all families at Friendly or higher opinion for re-election. Legitimacy awards reduced to +4.</en-US>
+	</Entry>
+
 	<!-- ==================== MEMORY TEXT ==================== -->
 	<Entry>
 		<zType>TEXT_MEMORYFAMILY_REPUBLIC_ELEVATED</zType>

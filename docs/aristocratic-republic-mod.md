@@ -42,23 +42,15 @@ This mod introduces an Aristocratic Republic government system to Old World wher
 
 ### Legitimacy System
 
-**Problem**: Normal succession causes legitimacy "decay" through cognomen dilution. The formula is:
-```
-cognomen.miLegitimacy / (numLeaders - leaderIndex)
-```
-When you go from 1 to 2 leaders, the first leader's cognomen contribution is halved. A leader with 100 legitimacy at turn 45 might lose ~30-50 legitimacy on transition.
+**Solution**: Grant flat `iLegitimacy` bonuses that go to `LegitimacyBase` (which does NOT decay). The bonus amount depends on the selected difficulty preset:
 
-**Solution**: Grant turn-scaled `iLegitimacy` bonuses that go to `LegitimacyBase` (which does NOT decay). Bonus scales with game progress to offset increasing cognomen loss:
+| Preset | Legitimacy (elect & re-elect) | Re-election Threshold |
+|--------|------------------------------|----------------------|
+| **Stable** (default) | +8 | Cautious+ |
+| **Strained** | +6 | Pleased+ |
+| **Fragile** | +4 | Friendly+ |
 
-| Turn Range | Est. Outgoing Legitimacy | Cognomen Loss | Election Bonus |
-|------------|-------------------------|---------------|----------------|
-| 10-30 | 30-50 | ~15-25 | **+8** |
-| 31-60 | 50-100 | ~25-50 | **+15** |
-| 61-100 | 100-150 | ~50-75 | **+25** |
-| 101-150 | 150-200 | ~75-100 | **+35** |
-| 151+ | 200+ (flat) | ~100+ | **+45** |
-
-This requires 5 turn-tier variants of each election event, using `iMinTurns` and `iMaxTurns` to gate which fires.
+Presets are selected via `GameOption` toggles in game setup. The priority cascade mechanism (see Event Architecture) ensures only the correct preset's events fire.
 
 ### Leader Transition
 
@@ -73,29 +65,28 @@ Uses `iSeizeThroneSubject` bonus which:
 
 ### Multiple Event Variants
 
-Events vary by **candidate count** (how many candidates available) and **turn tier** (for legitimacy scaling).
+Events vary by **candidate count** (how many candidates available) and **difficulty preset** (legitimacy and opinion threshold).
 
-**Candidate Count Variants** (priority determines preference):
+**Candidate Count Variants** (within each preset, priority determines fallback):
 
-| Suffix | Candidates | Priority Offset | Fires When |
-|--------|------------|-----------------|------------|
-| `_3` | 3 | +0 | 2+ family heads + religion head |
-| `_2` | 2 | -1 | 1+ family head + any eligible adult |
+| Suffix | Candidates | Priority Offset |
+|--------|------------|-----------------|
+| `_3` | 3 | +0 (highest) |
+| `_2` | 2 | -1 |
+| `_1` | 1 | -2 (lowest) |
 
-**Turn Tier Variants** (legitimacy scaling):
+**Difficulty Preset Variants** (priority cascade ensures correct preset fires):
 
-| Suffix | Turn Range | Legitimacy Bonus | Uses Options |
-|--------|------------|------------------|--------------|
-| `_T1` | 10-30 | +8 | `*_SEIZE_T1` |
-| `_T2` | 31-60 | +15 | `*_SEIZE_T2` |
-| `_T3` | 61-100 | +25 | `*_SEIZE_T3` |
-| `_T4` | 101-150 | +35 | `*_SEIZE_T4` |
-| `_T5` | 151+ | +45 | `*_SEIZE_T5` |
+| Preset | Legitimacy | Threshold | Priority (3c/2c/1c) | `aeGameOptionInvalid` |
+|--------|-----------|-----------|--------------------|-----------------------|
+| Stable | +8 | Cautious+ | 21/20/19 | STRAINED, FRAGILE |
+| Strained | +6 | Pleased+ | 18/17/16 | FRAGILE |
+| Fragile | +4 | Friendly+ | 15/14/13 | *(none)* |
 
-**Combined naming**: `EVENTSTORY_REPUBLIC_ELECTION_{candidates}_{tier}`
-- Example: `EVENTSTORY_REPUBLIC_ELECTION_3_T2` = 3 candidates, turns 31-60, +15 legitimacy
+**Combined naming**: `EVENTSTORY_REPUBLIC_ELECTION_{candidates}_{preset}`
+- Example: `EVENTSTORY_REPUBLIC_ELECTION_3_STABLE` = 3 candidates, Stable preset
 
-**Total events**: 2 candidate variants × 5 turn tiers = **10 election events**
+**Total events**: 3 candidate variants × 3 presets = **9 election events**
 
 ### Bidirectional Cooldown Links
 

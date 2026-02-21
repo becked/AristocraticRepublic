@@ -3,20 +3,24 @@
   <displayName>Aristocratic Republic</displayName>
   <description>Power shared is power contested. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it.
 
+Difficulty:
+- Stable (default): Re-election requires Cautious+ opinion from all families. +8 legitimacy per election.
+- Strained: Re-election requires Pleased+ opinion. +6 legitimacy per election.
+- Fragile: Re-election requires Friendly+ opinion. +4 legitimacy per election.
+Enable Strained or Fragile in game setup under Rules.
+
 Rules:
 - Elections occur every 10 turns starting at turn 10
 - Candidates are family heads who are adult, healthy, and not the current leader
 - Each candidate must come from a different family
-- The current leader may run for re-election, but only if all families have at least Cautious opinion
+- The current leader may run for re-election, but only if all families meet the opinion threshold
 - The winning candidate's family gains +20 opinion for 20 turns
 - All other families lose 20 opinion for 20 turns
-- New leaders receive a legitimacy bonus that scales with game progress: small in the early game, large in the late game
-- Re-elected leaders receive a smaller legitimacy bonus than new leaders
 - Leader changes use the Seize Throne mechanism, so there are no heir-bypass penalties
 </description>
   <modpicture>logo-512.png</modpicture>
   <author>Jeff</author>
-  <modversion>1.0.0</modversion>
+  <modversion>1.1.0</modversion>
   <tags>Gameplay</tags>
   <singlePlayer>true</singlePlayer>
   <multiplayer>true</multiplayer>
