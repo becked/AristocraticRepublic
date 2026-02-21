@@ -39,6 +39,18 @@ fi
 # Validate mod content
 "$SCRIPT_DIR/validate.sh" || exit 1
 
+# Build C# mod if project file exists
+CSPROJ=$(ls "$PROJECT_DIR"/*.csproj 2>/dev/null | head -1)
+if [ -n "$CSPROJ" ]; then
+    if [ -z "$OLDWORLD_PATH" ]; then
+        echo "Error: OLDWORLD_PATH not set in .env (required for C# build)"
+        exit 1
+    fi
+    echo ""
+    echo "=== Building C# mod ==="
+    dotnet build "$CSPROJ" -c Release -p:OldWorldPath="$OLDWORLD_PATH"
+fi
+
 # Read version from ModInfo.xml (single source of truth)
 VERSION=$(sed -n 's/.*<modversion>\([^<]*\)<\/modversion>.*/\1/p' ModInfo.xml)
 if [ -z "$VERSION" ]; then
@@ -76,8 +88,13 @@ rm -rf workshop_content
 mkdir -p workshop_content
 
 cp ModInfo.xml workshop_content/
-cp logo-512.png workshop_content/
+[ -f logo-512.png ] && cp logo-512.png workshop_content/
 cp -r Infos workshop_content/
+
+# Copy built DLLs if C# mod
+if [ -n "$CSPROJ" ]; then
+    cp "$PROJECT_DIR"/bin/*.dll workshop_content/
+fi
 
 echo "Content staged:"
 ls -la workshop_content/

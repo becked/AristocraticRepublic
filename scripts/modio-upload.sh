@@ -49,6 +49,18 @@ fi
 # Validate mod content
 "$SCRIPT_DIR/validate.sh" || exit 1
 
+# Build C# mod if project file exists
+CSPROJ=$(ls "$PROJECT_DIR"/*.csproj 2>/dev/null | head -1)
+if [ -n "$CSPROJ" ]; then
+    if [ -z "$OLDWORLD_PATH" ]; then
+        echo "Error: OLDWORLD_PATH not set in .env (required for C# build)"
+        exit 1
+    fi
+    echo ""
+    echo "=== Building C# mod ==="
+    dotnet build "$CSPROJ" -c Release -p:OldWorldPath="$OLDWORLD_PATH"
+fi
+
 # Read version from ModInfo.xml (single source of truth)
 VERSION=$(sed -n 's/.*<modversion>\([^<]*\)<\/modversion>.*/\1/p' ModInfo.xml)
 if [ -z "$VERSION" ]; then
@@ -70,9 +82,13 @@ if [ -z "$CHANGELOG" ] && [ -f "CHANGELOG.md" ]; then
     ' CHANGELOG.md | sed '/^$/d' | head -20)
 fi
 
-# Mod metadata
-MOD_NAME="Aristocratic Republic"
-MOD_SUMMARY="Power shared is power contested. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it."
+# Read mod metadata from ModInfo.xml
+MOD_NAME=$(sed -n 's/.*<displayName>\([^<]*\)<\/displayName>.*/\1/p' ModInfo.xml)
+MOD_SUMMARY=$(sed -n 's/.*<description>\([^<]*\)<\/description>.*/\1/p' ModInfo.xml)
+if [ -z "$MOD_NAME" ]; then
+    echo "Error: Could not extract mod name from ModInfo.xml"
+    exit 1
+fi
 
 # Read description from file if available
 if [ -f "mod-description.html" ]; then
@@ -105,12 +121,12 @@ if [ -z "$MODIO_MOD_ID" ]; then
         "https://api.mod.io/v1/games/$MODIO_GAME_ID/mods"
         -H "Authorization: Bearer $MODIO_ACCESS_TOKEN"
         -H "Accept: application/json"
-        -F "name=$MOD_NAME"
-        -F "summary=$MOD_SUMMARY"
+        --form-string "name=$MOD_NAME"
+        --form-string "summary=$MOD_SUMMARY"
         -F "logo=@logo-512.png"
     )
     if [ -n "$DESCRIPTION" ]; then
-        CURL_CREATE_ARGS+=(-F "description=$DESCRIPTION")
+        CURL_CREATE_ARGS+=(--form-string "description=$DESCRIPTION")
     fi
 
     RESPONSE=$(curl -sS -w "\n%{http_code}" "${CURL_CREATE_ARGS[@]}")
@@ -194,8 +210,13 @@ rm -rf modio_content modio_upload.zip
 mkdir -p modio_content
 
 cp ModInfo.xml modio_content/
-cp logo-512.png modio_content/
+[ -f logo-512.png ] && cp logo-512.png modio_content/
 cp -r Infos modio_content/
+
+# Copy built DLLs if C# mod
+if [ -n "$CSPROJ" ]; then
+    cp "$PROJECT_DIR"/bin/*.dll modio_content/
+fi
 
 echo "Content prepared:"
 ls -la modio_content/

@@ -95,7 +95,9 @@ AristocraticRepublic/
 │   └── text-new-add.xml      # Additional text strings (needs UTF-8 BOM)
 ├── docs/
 │   ├── aristocratic-republic-mod.md  # Full PRD and design spec
-│   ├── modding-lessons-learned.md    # Troubleshooting and modding patterns
+│   ├── modding-guide-xml.md          # XML modding reference (events, game options, text)
+│   ├── modding-guide-csharp.md       # C# modding reference (GameFactory, Harmony)
+│   ├── modding-lessons-learned.md    # Mod-specific notes and debugging
 │   ├── memory-levels.md             # Vanilla memory level reference table
 │   └── event-lottery-weight-system.md
 ├── CHANGELOG.md              # Release notes (parsed by upload scripts)

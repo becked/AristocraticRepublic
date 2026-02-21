@@ -673,5 +673,6 @@ Inspired by the Roman Republic, Carthage, and Venice - where powerful families s
 - `Reference/XML/Infos/eventStory.xml` - Event examples
 - `Reference/XML/Infos/bonus.xml` - Bonus field definitions
 - `Reference/XML/Infos/subject.xml` - Subject type definitions
-- `docs/modding-guide.md` - General modding reference
+- `docs/modding-guide-xml.md` - XML modding reference
+- `docs/modding-guide-csharp.md` - C# modding reference
 - `docs/event-lottery-weight-system.md` - Event selection mechanics
