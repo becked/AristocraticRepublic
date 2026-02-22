@@ -2,9 +2,17 @@
 
 ![Aristocratic Republic](logo-512.png)
 
-An Old World mod that adds a republic government system with periodic elections every 10 turns.
+An Old World mod that replaces dynastic succession with an aristocratic republic. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it.
 
-Power shared is power contested. Every 10 turns, elevate a new family head to the throne — or keep your current leader, if the other families will allow it.
+## Features
+
+- Elections every 10 turns with 1-3 candidates from different families
+- No dynastic heir — the heir slot stays empty between elections
+- No heir-bypass murders, coups, or exile events
+- No coronation or succession events after elections
+- Emergency elections if the leader dies mid-term
+- Vanilla succession laws locked while elective is active
+- Three difficulty presets with different re-election thresholds
 
 ## Difficulty Presets
 
@@ -34,7 +42,7 @@ Subscribe on [Steam Workshop](https://steamcommunity.com/sharedfiles/filedetails
 
 - Single-player and multiplayer
 - No DLC required
-- XML-only — no C# code, compatible with other mods
+- Uses Harmony for succession patches — compatible with most mods
 
 ## Credits
 
