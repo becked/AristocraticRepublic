@@ -130,6 +130,8 @@ if [ -f "mod-description.html" ]; then
         -e 's|<ul>|[list]|' \
         -e 's|</ul>|[/list]|' \
         -e 's|<li>\(.*\)</li>|[*] \1|' \
+        -e 's|<b>|[b]|g' \
+        -e 's|</b>|[/b]|g' \
         mod-description.html | sed "s/\"/'/g")
     echo "Description converted from mod-description.html"
 else
