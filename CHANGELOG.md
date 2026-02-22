@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.2.0] - 2026-02-21
+## [1.2.0] - 2026-02-22
 
 - Add Harmony patches to suppress dynastic succession for elective players
   - No heir tracked or displayed in UI
@@ -8,6 +8,7 @@
   - No coronation/succession events after elections
   - No law auto-switching on leader death
 - Add "Elective Succession" law (auto-assigned to human players at game start)
+- Block vanilla succession laws for elective players
 - Add emergency election events for mid-term leader death (SUCCESSION_FAIL trigger)
   - 9 emergency events (3 candidate counts x 3 presets), same legitimacy as regular elections
 - Suppress 8 vanilla events incompatible with republic governance via XML
