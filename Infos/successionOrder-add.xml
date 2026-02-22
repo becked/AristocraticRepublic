@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+	<Entry>
+		<zType>SUCCESSIONORDER_ELECTIVE</zType>
+		<Name>TEXT_SUCCESSIONORDER_ELECTIVE</Name>
+		<Help>TEXT_SUCCESSIONORDER_ELECTIVE_HELP</Help>
+	</Entry>
+</Root>

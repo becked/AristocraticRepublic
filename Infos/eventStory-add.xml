@@ -782,4 +782,650 @@
 			<zValue>EVENTSTORY_REPUBLIC_ELECTION_2_FRAGILE</zValue>
 		</aeEventStoryRepeatTurns>
 	</Entry>
+
+	<!-- ============================================================================ -->
+	<!-- EMERGENCY ELECTION EVENTS (fired on SUCCESSION_FAIL when leader dies mid-term) -->
+	<!-- 9 events: 3 candidate counts x 3 presets                                     -->
+	<!-- No re-election option (leader is dead), no leader subject                     -->
+	<!-- Reuses existing BONUS_REPUBLIC_ELECT_* bonuses (same legitimacy + memories)   -->
+	<!-- ============================================================================ -->
+
+	<!-- ==================== EMERGENCY STABLE: 3-CANDIDATE (priority 12) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_3</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate3">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family3">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate3</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+			<Triple><First>2</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_3</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate3</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>12</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_STRAINED</zValue>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY STABLE: 2-CANDIDATE (priority 11) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_2</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>11</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_STRAINED</zValue>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY STABLE: 1-CANDIDATE (priority 10) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_1</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_1C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STABLE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>10</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_STRAINED</zValue>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY STRAINED: 3-CANDIDATE (priority 9) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_3</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate3">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family3">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate3</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+			<Triple><First>2</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_3</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate3</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>9</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY STRAINED: 2-CANDIDATE (priority 8) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_2</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>8</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY STRAINED: 1-CANDIDATE (priority 7) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_1</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_1C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_STRAINED</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>7</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeGameOptionInvalid>
+			<zValue>GAMEOPTION_REPUBLIC_FRAGILE</zValue>
+		</aeGameOptionInvalid>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY FRAGILE: 3-CANDIDATE (priority 6) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_3</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate3">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family3">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate3</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+			<Triple><First>2</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>3</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_3</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate3</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>6</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY FRAGILE: 2-CANDIDATE (priority 5) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_2</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="candidate2">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+			<Subject alias="family2">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate2</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<SubjectNotRelations>
+			<Triple><First>1</First><Second>SUBJECTRELATION_FAMILY_SAME</Second><Third>2</Third></Triple>
+		</SubjectNotRelations>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2_2C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate2</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>5</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
+
+	<!-- ==================== EMERGENCY FRAGILE: 1-CANDIDATE (priority 4) ==================== -->
+	<Entry>
+		<zType>EVENTSTORY_REPUBLIC_EMERGENCY_1_FRAGILE</zType>
+		<Name>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</Name>
+		<Text>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_1</Text>
+		<zBackgroundName>crowning_02</zBackgroundName>
+		<zAudioTrigger>AUDIO_UI_EVENT_CELEBRATION</zAudioTrigger>
+		<Trigger>EVENTTRIGGER_SUCCESSION_FAIL</Trigger>
+		<Subjects>
+			<Subject alias="player">
+				<Type>SUBJECT_PLAYER_US</Type>
+			</Subject>
+			<Subject alias="candidate1">
+				<Type>SUBJECT_FAMILY_HEAD_US</Type>
+				<Extra>SUBJECT_ADULT</Extra>
+				<Extra>SUBJECT_HEALTHY</Extra>
+				<Extra>SUBJECT_NON_LEADER</Extra>
+			</Subject>
+			<Subject alias="family1">
+				<Type>SUBJECT_FAMILY_US</Type>
+				<Relations>
+					<Relation><Type>SUBJECTRELATION_FAMILY_SAME</Type><Target>candidate1</Target></Relation>
+				</Relations>
+			</Subject>
+		</Subjects>
+		<EventOptions>
+			<EventOption>
+				<Text>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_1C</Text>
+				<SubjectBonuses>
+					<Pair><First>candidate1</First><Second>BONUS_REPUBLIC_ELECT_FRAGILE</Second></Pair>
+				</SubjectBonuses>
+			</EventOption>
+		</EventOptions>
+		<iPriority>4</iPriority>
+		<iWeight>1</iWeight>
+		<iProb>100</iProb>
+		<aeEventStoryRepeatTurns>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STABLE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_1_STRAINED</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_3_FRAGILE</zValue>
+			<zValue>EVENTSTORY_REPUBLIC_EMERGENCY_2_FRAGILE</zValue>
+		</aeEventStoryRepeatTurns>
+	</Entry>
 </Root>

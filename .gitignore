@@ -1,5 +1,7 @@
 .env
 Reference
+bin/
+obj/
 workshop_content/
 workshop_upload.vdf
 modio_content/

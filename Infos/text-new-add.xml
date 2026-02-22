@@ -89,4 +89,66 @@
 		<zType>TEXT_MEMORYFAMILY_REPUBLIC_PASSED_OVER</zType>
 		<en-US>Passed Over for Leadership</en-US>
 	</Entry>
+
+	<!-- ==================== LAW AND SUCCESSION TEXT ==================== -->
+	<Entry>
+		<zType>TEXT_SUCCESSIONORDER_ELECTIVE</zType>
+		<en-US>Elective</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_SUCCESSIONORDER_ELECTIVE_HELP</zType>
+		<en-US>Leaders are chosen by the council of oligarchs through periodic elections. No dynastic heir is tracked.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_LAW_ELECTIVE</zType>
+		<en-US>Elective Succession</en-US>
+	</Entry>
+
+	<!-- ==================== EMERGENCY ELECTION TEXT ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_TITLE</zType>
+		<en-US>Emergency Council</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_3</zType>
+		<en-US>Our leader has fallen. The republic must not falter — the council of oligarchs convenes in emergency session. Three family heads stand ready to take the reins of power: {CHARACTER-1} of {FAMILY-4}, {CHARACTER-2} of {FAMILY-5}, and {CHARACTER-3} of {FAMILY-6}. The republic demands swift action.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_2</zType>
+		<en-US>Our leader has fallen. The council convenes in haste. Two family heads stand ready to assume command: {CHARACTER-1} of {FAMILY-3} and {CHARACTER-2} of {FAMILY-4}. The republic must choose quickly.</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTSTORY_REPUBLIC_EMERGENCY_1</zType>
+		<en-US>Our leader has fallen. In this hour of crisis, only {CHARACTER-1} of {FAMILY-2} stands ready to lead. The council has little choice but to act.</en-US>
+	</Entry>
+
+	<!-- ==================== EMERGENCY EVENT OPTIONS - 3 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1</zType>
+		<en-US>The council elevates {CHARACTER-1} of {FAMILY-4}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2</zType>
+		<en-US>The council elevates {CHARACTER-2} of {FAMILY-5}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_3</zType>
+		<en-US>The council elevates {CHARACTER-3} of {FAMILY-6}</en-US>
+	</Entry>
+
+	<!-- ==================== EMERGENCY EVENT OPTIONS - 2 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_2C</zType>
+		<en-US>The council elevates {CHARACTER-1} of {FAMILY-3}</en-US>
+	</Entry>
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_2_2C</zType>
+		<en-US>The council elevates {CHARACTER-2} of {FAMILY-4}</en-US>
+	</Entry>
+
+	<!-- ==================== EMERGENCY EVENT OPTIONS - 1 CANDIDATE ==================== -->
+	<Entry>
+		<zType>TEXT_EVENTOPTION_REPUBLIC_EMERGENCY_CANDIDATE_1_1C</zType>
+		<en-US>The council elevates {CHARACTER-1} of {FAMILY-2}</en-US>
+	</Entry>
 </Root>

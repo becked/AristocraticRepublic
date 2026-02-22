@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+	<Entry>
+		<zType>LAW_ELECTIVE</zType>
+		<Name>TEXT_LAW_ELECTIVE</Name>
+		<zIconName>LAW_SENIORITY</zIconName>
+		<iCostBase>0</iCostBase>
+		<iCostPerChange>0</iCostPerChange>
+		<LawClass>LAWCLASS_ORDER</LawClass>
+		<SuccessionOrder>SUCCESSIONORDER_ELECTIVE</SuccessionOrder>
+	</Entry>
+</Root>

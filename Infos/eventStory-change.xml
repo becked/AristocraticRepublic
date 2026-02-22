@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Root>
+	<!-- Suppress heir-bypassed events (belt-and-suspenders with Patch A null heir) -->
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_SITUATION</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_MURDER</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_DOUBLE_MURDER</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_DOUBLE_MURDER_NO_SPOUSE</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_LEADER_MURDER</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_LEADER_IMPRISON</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+	<Entry>
+		<zType>EVENTSTORY_HEIR_BYPASSED_LEADER_EXILE</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+
+	<!-- Suppress family succession law-change event -->
+	<Entry>
+		<zType>EVENTSTORY_FAMILY_SUCCESSION</zType>
+		<iMinTurns>200</iMinTurns>
+	</Entry>
+</Root>

@@ -20,7 +20,7 @@ Rules:
 </description>
   <modpicture>logo-512.png</modpicture>
   <author>Jeff</author>
-  <modversion>1.1.0</modversion>
+  <modversion>1.2.0</modversion>
   <tags>Gameplay</tags>
   <singlePlayer>true</singlePlayer>
   <multiplayer>true</multiplayer>
